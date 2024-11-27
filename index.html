@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="icon" href="imgs/bookmark.png" >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <div class="bookmark py-5 position-relative">
+        <div class="bookmark-content ">
+            <div class="container">
+                <h1 class="py-2 m-auto position-relative">Bookmarker</h1>
+                <div class="bookmark-form p-3 py-4 mt-5">
+                    <h2 class="text-center">
+                        <i class="fa-solid fa-bookmark"></i>
+                        Bookmark your favorite sites
+                        <i class="fa-solid fa-bookmark"></i>
+                    </h2>
+                    <div class="bookmark-inputs">
+                        <label class="mb-2" for="bookmarkName">
+                            <i class="fa-solid fa-book-bookmark pe-2"></i>
+                            Site Name
+                        </label>
+                        <input oninput="validation(this)" type="text" placeholder="Bookmark Name" id="bookmarkName" class="form-control mb-4 " >
+                        <label class="mb-2" for="bookmarkURL">
+                            <i class="fa-solid fa-link pe-2"></i>
+                            Site URL
+                        </label>
+                        <input oninput="validation(this)" type="text" placeholder="Website URL" id="bookmarkURL" class="form-control mb-4" >
+
+                        <div class="bookmark-btn text-center">
+                            <button onclick="addBook()" class="btn btn-submit px-5">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table mt-4 text-center bg-light">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Website Name</th>
+                            <th>Visit</th>
+                            <th>Delete</th>
+                        </tr>
+                        <tbody id="tableContent">
+                        </tbody>
+                    </thead>
+                </table>
+            </div>
+            <div id="validationInfo" onclick=(closeInfo()) class="valid-msg d-flex d-none justify-content-center align-items-center start-0 w-100 h-100 bottom-0 bg-black bg-opacity-50 position-absolute">
+                <div class="msg-card bg-white p-4 rounded-2 shadow-lg">
+                    <div class="msg-header d-flex justify-content-between align-items-center mb-4">
+                        <div class="circles d-flex">
+                            <span class="rounded-circle circle-1 me-2 "></span>
+                            <span class="rounded-circle circle-2 me-2 "></span>
+                            <span class="rounded-circle circle-3 me-2 "></span>
+                        </div>
+                        <button onclick="closeInfo()" class="btn border-0"><i class="fa-solid fa-xmark fs-4"></i></button>
+                    </div>
+                    <p >Site Name or Url is not valid, Please follow the rules below :</p>
+                    <ol class="rules list-unstyled m-0">
+                        <li><i class="fa-regular fa-circle-right p-2"></i>Site name must contain at least 3 characters can include letters, numbers, or underscores.</li>
+                        <li><i class="fa-regular fa-circle-right p-2"></i>The URL must start with http:// or https://, optionally include www., and have a domain name followed by a valid extension (e.g., .com, .org).</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
